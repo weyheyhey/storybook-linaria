@@ -29,6 +29,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.22.15",
     "@storybook/addon-essentials": "^7.5.2",
     "@storybook/addon-interactions": "^7.5.2",
     "@storybook/addon-links": "^7.5.2",
@@ -44,6 +45,10 @@
     "webpack": "^5.89.0"
   },
   "dependencies": {
+    "@linaria/babel-preset": "^5.0.3",
+    "@linaria/core": "^5.0.2",
+    "@linaria/react": "^5.0.3",
+    "@linaria/webpack-loader": "^5.0.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

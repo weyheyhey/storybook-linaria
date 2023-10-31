@@ -17,5 +17,24 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   staticDirs: ["../public"],
+  webpackFinal(config) {
+    config.module?.rules?.push({
+      test: /\.(ts|tsx|js|mjs|jsx)$/,
+      use: [
+        {
+          loader: require.resolve("@linaria/webpack-loader"),
+          options: {
+            extension: ".linaria.module.css",
+            sourceMap: process.env.NODE_ENV !== "production",
+            displayName: process.env.NODE_ENV !== "production",
+            babelOptions: {
+              presets: ["@babel/preset-react", "@linaria"],
+            },
+          },
+        },
+      ],
+    });
+    return config;
+  },
 };
 export default config;
